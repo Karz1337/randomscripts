@@ -1,0 +1,39 @@
+--// equip all
+
+for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+         tool.Parent = game:GetService("Players").LocalPlayer.Character -- I didn't use Equip because the Equip function unequips any other tools in your character.
+    end
+end
+
+--// racemode autofarm
+loadstring(game:HttpGet("https://pastebin.com/raw/74VJ07iY", true))()
+
+--// cracked rayzor x
+loadstring(game:HttpGet("https://reflection.network/crackedrayzorxlol", true))()
+
+--// infinite yeild
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+--// da hood skydive
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-160.119, 6000.7409, 211.532)
+
+--// logger dodger
+local sites = {
+    "api.myip.com",
+    "api.ipify.org",
+    "v4.ident.me"
+}
+
+local g
+g = getfenv()["hook".."fun"..("C:"):sub(1,1):lower()](game.HttpGet, function(e, url, ...)
+    for i = 1, #sites do
+        if string.find(url, sites[i]) then
+        print("ip log dodged with the url: "..url)
+            return "no"
+        end
+    end
+    return g(e, url, ...)
+end)
+
+--//
